@@ -91,10 +91,6 @@ def check(text):
     start_time = time.time()
     r = get_response(read_token(), text)
     passed_time = time.time() - start_time
-    r = r.text
-    start = r.index('({')+1
-    end = r.index('})')+1
-    r=r[start:end]
     data = json.loads(r.text)
     html = data['message']['result']['html']
     result = {
